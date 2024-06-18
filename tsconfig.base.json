@@ -1,23 +1,37 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
     "sourceMap": true,
-    "declaration": false,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2022"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strict": true,
+    "noEmit": false,
     "baseUrl": ".",
     "paths": {
-      "@demo-org/fe-utils": ["packages/fe-utils/src/index.ts"],
-      "@demo-org/ui-lib": ["packages/ui-lib/src/index.ts"]
+      "@demo-org/fe-utils": [
+        "packages/fe-utils/src/index.ts"
+      ],
+      "@demo-org/ui-lib": [
+        "packages/ui-lib/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

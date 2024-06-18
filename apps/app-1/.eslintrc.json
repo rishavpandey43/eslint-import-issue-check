@@ -1,18 +1,56 @@
 {
-  "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+  "root": true,
+  "parserOptions": {
+    "project": [
+      "apps/app-1/tsconfig.*?.json"
+    ]
+  },
+  "plugins": [
+    "@nx",
+    "prettier",
+    "react",
+    "import",
+    "jsx-a11y",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "../../.eslintrc.json"
+  ],
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/ban-ts-comment": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
     },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "./tsconfig.app.json"
+      },
+      "node": {
+        "extensions": [
+          ",.js",
+          ",.jsx",
+          ",.ts",
+          ",.tsx"
+        ]
+      }
     }
-  ]
+  }
 }
